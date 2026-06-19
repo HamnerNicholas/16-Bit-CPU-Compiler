@@ -295,6 +295,145 @@ Planned features include:
 
 ---
 
+## Building and Running Programs
+
+### Step 1: Compile Source Code
+
+Compile a source file written in the custom language:
+
+```bash
+python compiler.py program.txt
+```
+
+This generates:
+
+```text
+assembly.txt
+```
+
+which contains the generated assembly code.
+
+---
+
+### Step 2: Assemble the Program
+
+Convert the generated assembly into machine code:
+
+```bash
+python assembler.py assembly.txt
+```
+
+This generates:
+
+```text
+machineCode2.txt
+globalMem.txt
+```
+
+---
+
+### Step 3: Load Into Logisim
+
+Open:
+
+```text
+16-Bit-CPU.circ
+```
+
+in Logisim.
+
+Load:
+
+```text
+machineCode2.txt
+```
+
+into Instruction RAM.
+
+Load:
+
+```text
+globalMem.txt
+```
+
+into Global Memory.
+
+Run the clock to execute the program.
+
+---
+
+### Example
+
+```bash
+python compiler.py Examples/07_function_parameters.txt
+python assembler.py assembly.txt
+```
+
+Then load the generated machine code into Logisim and run the CPU.
+
+## Language Syntax
+
+### Comments
+```c
+; This is a comment
+```
+
+### Variables
+
+```c
+let x = 0
+```
+
+### Arrays
+
+```c
+let nums[] = 5, 10, 15, 20
+```
+
+### Functions
+
+```c
+func add a b = {
+    return a + b
+}
+```
+
+### Function Calls
+
+```c
+call add(50,23)
+```
+
+### Return Value
+
+```c
+result = RETVAL
+```
+
+### If Statements
+
+```c
+if x < y
+    print x
+endif
+```
+
+### While Loops
+
+```c
+while x < 10
+    x = x + 1
+ewhile
+```
+
+### For Loops
+
+```c
+for i = 0, i < 10, i++
+    print i
+efor
+```
+
 ## Motivation
 
 This project was built to gain hands-on experience with:
