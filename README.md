@@ -1,4 +1,4 @@
-# Custom 8-Bit CPU, Assembler, and Compiler
+# Custom 16-Bit CPU, Assembler, and Compiler
 
 ## Overview
 
