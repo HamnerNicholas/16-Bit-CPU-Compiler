@@ -62,7 +62,7 @@ Output:
 
 ## CPU Architecture
 
-The processor is an accumulator-based 8-bit architecture featuring:
+The processor is an accumulator-based 16-bit architecture featuring:
 
 * 8 General Purpose Registers
 * Program Counter
